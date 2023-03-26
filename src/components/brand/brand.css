@@ -1,0 +1,28 @@
+.dnt__brand {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.dnt__brand div {
+    flex: 1;
+    max-width: 150px;
+    min-width: 120px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dnt__brand img {
+    width: 40%;
+    border-radius: 100%;
+
+}
+
+.dnt__brand img:hover {
+    border: 3px solid #00c9dc;
+    transform: scale(110%);
+    cursor: pointer;
+}
