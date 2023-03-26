@@ -25,16 +25,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    width: 20%;
     padding: 1rem;
     border: 1px solid #fff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 4px;
     margin-bottom: 10rem;
     cursor: pointer;
 }
 
 .dnt__footer-btn:hover {
+    transform: scale(95%);
+    transition: 1s;
     background: linear-gradient(to right,#00baf7 11%,#00c9dc 45%,#00dabb 66%);
 }
 
@@ -42,7 +44,9 @@
     font-size: 18px;
     font-family: var(--font-family);
     line-height: 21px;
+    letter-spacing: 2px;
     color: #fff;
+    font-size: larger;
     word-spacing: 2px;
 }
 
@@ -77,6 +81,14 @@
 .dnt__footer-links_logo p {
     font-family: var(--font-family);
     font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+}
+
+.dnt__footer-links_logo h1 {
+    font-family: var(--font-family);
+    font-size: 24px;
+    padding-bottom: 20px;
     line-height: 15px;
     color: #fff;
 }
