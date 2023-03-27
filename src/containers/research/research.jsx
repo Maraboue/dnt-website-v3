@@ -5,7 +5,7 @@ import './research.css';
 const featuresData = [
   {
     title: 'Improving the exchange of value',
-    text: 'By creating the $DNT token, a means of exchange exists so it benefits both holders and traders. In the short and the long run.',
+    text: 'By creating the $DNT token, a means of exchange exists so it benefits both holders daily users and traders. In the short and the long run.',
   },
   {
     title: 'Burning and Minting',
@@ -24,8 +24,8 @@ const featuresData = [
 const Research = () => (
   <div className="dnt__features section__padding" id="socials">
     <div className="dnt__features-heading">
-      <h1 className="gradient__text">The Future is Now and Alternative Ways of Payment is Part of It. Step into the Future of Transacting Today!</h1>
-      <p>Read More in Depth About the Project and its features.</p>
+      <h1 className="gradient__text">The Future is now and alternative ways of payment is part of it. Step into the future of transacting today.</h1>
+      <p>Read more in depth about the project and its features.</p>
     </div>
     <div className="dnt__features-container">
       {featuresData.map((item, index) => (

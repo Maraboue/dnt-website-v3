@@ -1,5 +1,5 @@
 import React from 'react';
-import possibilityImage from '../../assets/field.jpg';
+import possibilityImage from '../../assets/tech2.png';
 import './socials.css';
 
 const Socials = () => (
@@ -9,7 +9,7 @@ const Socials = () => (
     </div>
     <div className="dnt__possibility-content">
       <h4>Join the future of decentralized finance today</h4>
-      <h1 className="gradient__text"> Transactions that benefits the holders.<br /> The Dynamic Network Token.</h1>
+      <h1 className="gradient__text"> Transactions that benefits everyone.<br /> Dynamic Network Token.</h1>
       <p>Be a part of a community driven network where the governing token is self regulating, deflationary and has a more stable growth. Transactions should benefit the users, holders and traders all at the same time.</p>
       <h4>Available now on Uniswap</h4>
     </div>
