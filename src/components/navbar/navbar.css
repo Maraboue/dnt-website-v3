@@ -49,6 +49,16 @@
     cursor: pointer;
 }
 
+.dnt__navbar-links_container a:hover {
+    color: #00c9dc;
+    transition: all 0.5s ease-out;
+}
+
+.dnt__navbar-links_container p:hover{
+    transform: scale(95%);
+    transition: all 1.5s ease-out;
+}
+
 .dnt__navbar-sign button,
 .dnt__navbar-menu_container button {
     padding: 0.5rem 1rem;
@@ -62,9 +72,8 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    
     background-color: rgba(255,255,255,0.2);
-     opacity: 0.8;
+    opacity: 0.8;
     transition: all 0.5s ease-out;
 }
 
