@@ -1,10 +1,7 @@
-
-
 .dnt__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 2rem 6rem;
 }
 
@@ -106,7 +103,6 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
     text-align: end;
     background: var(--color-footer);
     padding: 2rem;
@@ -126,6 +122,19 @@
 .dnt__navbar-menu_container-links-sign {
     display: none;
 }
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
 
 @media screen and (max-width: 1050px) {
     .dnt__navbar-links_container {
@@ -158,5 +167,5 @@
 
     .dnt__navbar-menu_container-links-sign {
         display: block;
-    }
+    } 
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import people from '../../assets/people.png';
-import ai from '../../assets/globe.png';
+import ai from '../../assets/touch4.png';
 import './header.css';
 
 function Header() {
