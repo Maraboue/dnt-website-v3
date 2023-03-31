@@ -5,11 +5,11 @@ import './research.css';
 const featuresData = [
   {
     title: 'Improving the exchange of value',
-    text: 'By creating the $DNT token, a means of exchange exists so it benefits both holders daily users and traders. In the short and the long run.',
+    text: 'By creating the $DNT token, a means of exchange exists so it benefits both holders, daily users and traders. In the short and the long run.',
   },
   {
     title: 'Burning and Minting',
-    text: 'Burning in $DNT controls the volatility in a better way, thus making the Dynamic Network Token less volatile. The ratio implemented for the burning and minting is 2:1 in favor for the burning - creating a more deflationary token.',
+    text: 'Burning and minting in $DNT controls the volatility in a better way, thus making the Dynamic Network Token less volatile. The ratio implemented for the burning and minting is 2:1 in favor for the burning - creating a more deflationary token.',
   },
   {
     title: 'Network Based Burning',

@@ -42,7 +42,7 @@ function Header() {
         </div>
         <div className="dnt__header-content__people">
           <img src={people} />
-          <p>Join us in the world of Decentralized finance</p>
+          <p>Join us in the world of decentralized finance</p>
         </div>
       </div>
 
