@@ -25,14 +25,14 @@ const Footer = () => (
       </div>
       <div className="dnt__footer-links_div">
         <h4>Project</h4>
-        <p>Research & Results</p>
-        <p>Token Burning & Minting</p>
-        <p>network Based Burn</p>
+        <p><a href="https://docs.google.com/document/d/e/2PACX-1vQzA6xMEXmCYq4tD0ME-t24BBj4bDVx14lvL1oj3MHpDKb41DIdfwvhR79NxmrKXtpKzVVME1VxGjrj/pub">Research & Results</a></p>
+        <p><a href="https://docs.google.com/document/d/e/2PACX-1vR_LcCdc9HBBLpmufoHLqPKs38zFeYzZPp0fo8Q2UNXhgq_K3UKM0oushG7lN1D4Bh_TF4Sjh_ueFOu/pub">Token Burning & Minting</a></p>
+        <p><a href="https://docs.google.com/document/d/e/2PACX-1vTLgagJ4YEUFDJajGyl3SYT9tbbfLIvdq8e8Bj7qsK3IqAgdk0KUlK8b6LD_ejYawL6gdL91a4F-Hgq/pub">Network Based Burn</a></p>
       </div>
       <div className="dnt__footer-links_div">
         <h4>Get in touch</h4>
-        <p>Twitter @DynamicN3twork</p>
-        <p>hello@dynamicnetworktoken.com</p>
+        <p><a href="https://twitter.com/DynamicN3twork">Twitter @DynamicN3twork</a></p>
+        <p><a href="mailto:hello@dynamicnetworktoken.com">hello@dynamicnetworktoken.com</a></p>
       </div>
     </div>
 
