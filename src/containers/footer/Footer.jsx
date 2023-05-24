@@ -18,10 +18,10 @@ const Footer = () => (
       </div>
       <div className="dnt__footer-links_div">
         <h4>Links</h4>
-        <p>Discord</p>
-        <p>Github</p>
-        <p>Medium</p>
-        <p>Twitter</p>
+        <p><a href="https://discord.gg/Jn7M9Q3v4e">Discord</a></p>
+        <p><a href="https://github.com/Dynamic-Network">Github</a></p>
+        <p><a href="https://dynamic-network.medium.com/">Medium</a></p>
+        <p><a href="https://twitter.com/DynamicN3twork">Twitter</a></p>
       </div>
       <div className="dnt__footer-links_div">
         <h4>Project</h4>

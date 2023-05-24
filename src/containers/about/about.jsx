@@ -5,7 +5,7 @@ import './about.css';
 const About = () => (
   <div className="dnt__whatdnt section__margin" id="about">
     <div className="dnt__whatdnt-feature">
-      <Feature title="About Dynamic Network" text="We believe in good means of payment. This includes it to be decentralized, thus being more resistant, and deflationary, being in favour for both holders and users. We propose the Dynamic Network Token - a self regulating, decentarlized and deflationary token. The better way of exchanging value." />
+      <Feature title="About Dynamic Network" text="We believe in good means of payment. This includes it to be decentralized, resistant and deflationary. Sound means of exchange are made to benefit the users. Therfore, we propose the Dynamic Network Token - a self regulating, decentarlized and deflationary token. The better way of exchanging value." />
     </div>
     <div className="dnt__whatdnt-heading">
       <h1 className="gradient__text">The possibilities are beyond your imagination.</h1>

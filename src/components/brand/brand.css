@@ -7,7 +7,7 @@
 
 .dnt__brand div {
     flex: 1;
-    max-width: 150px;
+    max-width: 75px;
     min-width: 120px;
     margin: 1rem;
     display: flex;
@@ -16,9 +16,8 @@
 }
 
 .dnt__brand img {
-    width: 40%;
+    width: 35%;
     border-radius: 100%;
-
 }
 
 .dnt__brand img:hover {
@@ -26,3 +25,13 @@
     transform: scale(110%);
     cursor: pointer;
 }
+
+@media only screen and (max-width:512px) {
+    .dnt__brand img {
+        display: flex;
+        clear: both;
+    }
+
+
+
+  }

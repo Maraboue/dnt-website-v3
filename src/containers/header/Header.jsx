@@ -20,7 +20,7 @@ function Header() {
         console.log('SUCCESS!', response.status, response.text);
       });
     document.getElementById('from_name').value = '';
-    document.getElementById('from_name').placeholder = 'Thank you for your participation!';
+    document.getElementById('from_name').placeholder = 'Thank you for reaching out!';
   };
 
   const handleChange = (e) => {
