@@ -1,45 +1,66 @@
 import React from 'react';
+import { Logo } from '../../components';
+import { BURNING_URL, DISCORD_URL, EMAIL, GITHUB_URL, MEDIUM_URL, NBB_URL, TWITTER_URL, WHITEPAPER_URL } from '../../content';
 import './footer.css';
 
+const COLUMNS = [
+  {
+    title: 'Community',
+    links: [
+      { label: 'Discord', href: DISCORD_URL },
+      { label: 'GitHub', href: GITHUB_URL },
+      { label: 'Medium', href: MEDIUM_URL },
+      { label: 'Twitter', href: TWITTER_URL },
+    ],
+  },
+  {
+    title: 'Project',
+    links: [
+      { label: 'Research & Results', href: WHITEPAPER_URL },
+      { label: 'Token Burning & Minting', href: BURNING_URL },
+      { label: 'Network Based Burning', href: NBB_URL },
+    ],
+  },
+  {
+    title: 'Get in touch',
+    links: [
+      { label: '@DynamicN3twork', href: TWITTER_URL },
+      { label: EMAIL, href: `mailto:${EMAIL}` },
+    ],
+  },
+];
+
 const Footer = () => (
-  <div className="dnt__footer section__padding">
-    <div className="dnt__footer-heading">
-      <h1 className="gradient__text">Do you want to step in to the future before others?</h1>
-    </div>
+  <footer className="footer">
+    <div className="container">
+      <div className="footer__top">
+        <div className="footer__brand">
+          <Logo idPrefix="footer" size={30} />
+          Dynamic Network
+        </div>
+        {COLUMNS.map(({ title, links }) => (
+          <div key={title}>
+            <h2>{title}</h2>
+            <ul>
+              {links.map(({ label, href }) => {
+                const external = !href.startsWith('mailto:');
+                return (
+                  <li key={label}>
+                    <a href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>{label}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </div>
 
-    <div className="dnt__footer-btn">
-      <p><a href="https://app.uniswap.org/#/swap?inputCurrency=0x86632544e69c8019babd01be75393f9c2d46ee70&outputCurrency=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&chain=mainnet">Get $DNT</a></p>
-    </div>
-
-    <div className="dnt__footer-links">
-      <div className="dnt__footer-links_logo">
-        <h1>Dynamic Network</h1>
-        <p>The Dynamic Network Project, <br /> All Rights Reserved.  ©</p>
-      </div>
-      <div className="dnt__footer-links_div">
-        <h4>Links</h4>
-        <p><a href="https://discord.gg/Jn7M9Q3v4e">Discord</a></p>
-        <p><a href="https://github.com/Dynamic-Network">Github</a></p>
-        <p><a href="https://dynamic-network.medium.com/">Medium</a></p>
-        <p><a href="https://twitter.com/DynamicN3twork">Twitter</a></p>
-      </div>
-      <div className="dnt__footer-links_div">
-        <h4>Project</h4>
-        <p><a href="https://docs.google.com/document/d/e/2PACX-1vQzA6xMEXmCYq4tD0ME-t24BBj4bDVx14lvL1oj3MHpDKb41DIdfwvhR79NxmrKXtpKzVVME1VxGjrj/pub">Research & Results</a></p>
-        <p><a href="https://docs.google.com/document/d/e/2PACX-1vR_LcCdc9HBBLpmufoHLqPKs38zFeYzZPp0fo8Q2UNXhgq_K3UKM0oushG7lN1D4Bh_TF4Sjh_ueFOu/pub">Token Burning & Minting</a></p>
-        <p><a href="https://docs.google.com/document/d/e/2PACX-1vTLgagJ4YEUFDJajGyl3SYT9tbbfLIvdq8e8Bj7qsK3IqAgdk0KUlK8b6LD_ejYawL6gdL91a4F-Hgq/pub">Network Based Burn</a></p>
-      </div>
-      <div className="dnt__footer-links_div">
-        <h4>Get in touch</h4>
-        <p><a href="https://twitter.com/DynamicN3twork">Twitter @DynamicN3twork</a></p>
-        <p><a href="mailto:hello@dynamicnetworktoken.com">hello@dynamicnetworktoken.com</a></p>
+      <div className="footer__bottom">
+        <p>Nothing on this site is financial advice. Crypto assets are volatile and you can lose what you put in. Research figures come from simulations and don’t predict real-world performance.</p>
+        <p>© {new Date().getFullYear()} Dynamic Network. All rights reserved.</p>
       </div>
     </div>
-
-    <div className="dnt__footer-copyright">
-      <p>@2023 Dynamic Network. All rights reserved.</p>
-    </div>
-  </div>
+  </footer>
 );
 
 export default Footer;

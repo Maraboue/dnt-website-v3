@@ -1,0 +1,58 @@
+.contract {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: 100%;
+  padding: 0.25rem 0.25rem 0.25rem 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  font-size: 0.875rem;
+}
+
+.contract__label {
+  margin-right: 0.5rem;
+  color: var(--muted);
+}
+
+.contract__address {
+  min-width: 0;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.contract__ellipsis {
+  display: none;
+}
+
+.contract__action {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.contract__action:hover {
+  background: rgba(166, 217, 234, 0.1);
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .contract__middle {
+    display: none;
+  }
+
+  .contract__ellipsis {
+    display: inline;
+  }
+}

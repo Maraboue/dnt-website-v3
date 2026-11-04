@@ -1,56 +1,60 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
-import people from '../../assets/people.png';
-import ai from '../../assets/touch4.png';
+import React from 'react';
+import { FaDiscord, FaGithub, FaMedium, FaTwitter } from 'react-icons/fa';
+import { ContractAddress, Logo } from '../../components';
+import { DISCORD_URL, GITHUB_URL, MEDIUM_URL, STATS, SWAP_URL, TWITTER_URL, WHITEPAPER_URL } from '../../content';
 import './header.css';
 
-function Header() {
-  const [toSend, setToSend] = useState({
-    from_name: '',
-    to_name: 'Dynamic Network',
-    message: 'Sent from request in header section.',
-    reply_to: '',
-  });
+const SOCIALS = [
+  { label: 'Discord', href: DISCORD_URL, Icon: FaDiscord },
+  { label: 'GitHub', href: GITHUB_URL, Icon: FaGithub },
+  { label: 'Medium', href: MEDIUM_URL, Icon: FaMedium },
+  { label: 'Twitter', href: TWITTER_URL, Icon: FaTwitter },
+];
 
-  const onSubmit = (e) => {
-    console.log(toSend);
-    e.preventDefault();
-    emailjs.send('service_f3ugcj6', 'template_8z65gan', toSend, 'CdBOqvJOI9zgDnoZQ')
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-      });
-    document.getElementById('from_name').value = '';
-    document.getElementById('from_name').placeholder = 'Thank you for reaching out!';
-  };
-
-  const handleChange = (e) => {
-    console.log([e.target.name], e.target.value);
-    setToSend({ ...toSend, [e.target.name]: e.target.value });
-  };
-
-  return (
-    <div className="dnt__header section__padding" id="home">
-      <div className="dnt__header-content">
-        <h1 className="gradient__text">The Self Regulating Cryptocurrency</h1>
-        <p>A fully decentralized community where the participants governs the future.</p>
-
-        <div className="dnt__header-content__input">
-          <form className="dnt__header-content__input" onSubmit={onSubmit}>
-            <input type="text" placeholder="Your Email Address" id="from_name" name="from_name" value={toSend.from_name} onChange={handleChange} />
-            <button type="submit">Get Started</button>
-          </form>
+const Header = () => (
+  <section className="hero" id="home">
+    <div className="hero__main container">
+      <div className="hero__content">
+        <p className="eyebrow">An ERC-20 token on Ethereum</p>
+        <h1 className="hero__title">The self-regulating cryptocurrency</h1>
+        <p className="hero__lead">A fully decentralized community where the participants govern the future.</p>
+        <div className="hero__actions">
+          <a className="button button--primary" href={SWAP_URL} target="_blank" rel="noopener noreferrer">Get $DNT</a>
+          <a className="button button--ghost" href={WHITEPAPER_URL} target="_blank" rel="noopener noreferrer">Read the whitepaper</a>
         </div>
-        <div className="dnt__header-content__people">
-          <img src={people} />
-          <p>Join us in the world of decentralized finance</p>
-        </div>
+        <ContractAddress />
       </div>
 
-      <div className="dnt__header-image">
-        <img src={ai} />
+      <div className="hero__visual">
+        <Logo idPrefix="hero" animated strokeWidth={9} nodeRadius={17} title="Dynamic Network logo, a network of connected nodes" />
       </div>
     </div>
-  );
-}
+
+    <div className="container">
+      <dl className="stats">
+        {STATS.map(({ value, label }) => (
+          <div className="stats__item" key={label}>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="community">
+        <p>Join us in the world of decentralized finance</p>
+        <ul>
+          {SOCIALS.map(({ label, href, Icon }) => (
+            <li key={label}>
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                <Icon size={18} aria-hidden="true" />
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+);
 
 export default Header;

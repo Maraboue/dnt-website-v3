@@ -1,171 +1,94 @@
-.dnt__navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 6rem;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 13, 20, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
-.dnt__navbar-links {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 4.5rem;
 }
 
-.dnt__navbar-links_logo {
-    margin-right: 2rem;
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-right: auto;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
 }
 
-.dnt__navbar-links_logo img {
-    width: 62.56px;
-    height: 58.02px;
+.navbar__links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9375rem;
 }
 
-.dnt__navbar-links_container {
-    display: flex;
-    flex-direction: row;
+.navbar__links a {
+  color: var(--muted);
+  transition: color 0.2s ease;
 }
 
-.dnt__navbar-sign {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.navbar__links a:hover {
+  color: var(--text);
 }
 
-.dnt__navbar-links_container p,
-.dnt__navbar-sign p,
-.dnt__navbar-menu_container p {
-    color: #fff;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    text-transform: capitalize;
-
-    margin: 0 1rem;
-    cursor: pointer;
+.navbar__cta {
+  min-height: 2.5rem;
+  padding-block: 0.375rem;
+  font-size: 0.9375rem;
 }
 
-.dnt__navbar-links_container a:hover {
-    color: #00c9dc;
-    transition: all 0.5s ease-out;
+.navbar__toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: -0.5rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
 }
 
-.dnt__navbar-links_container p:hover{
-    transform: scale(95%);
-    transition: all 1.5s ease-out;
+.navbar__menu {
+  border-top: 1px solid var(--line);
+  background: var(--ink);
 }
 
-.dnt__navbar-sign button,
-.dnt__navbar-menu_container button {
-    padding: 0.5rem 1rem;
-    color: #fff;
-    font-family: var(--font-family);
-    font-weight: 500;
-    width: 200px;
-    font-size: 18px;
-    line-height: 25px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: rgba(255,255,255,0.2);
-    opacity: 0.8;
-    transition: all 0.5s ease-out;
+.navbar__menu ul {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: 1rem 1.5rem;
 }
 
-.dnt__navbar-sign button:hover,
-.dnt__navbar-menu_container button:hover{
-    background: linear-gradient(to right,#00baf7 11%,#00c9dc 45%,#00dabb 66%);
-    transform: scale(95%);
-    opacity: 1;
-    transition: all 0.5s ease-in;
+.navbar__menu li > a:not(.button) {
+  display: block;
+  padding-block: 0.75rem;
+  font-size: 1.125rem;
 }
 
-.dnt__navbar-sign button:focus,
-.dnt__navbar-menu_container:focus {
-  background: black;
+.navbar__menu .button {
+  width: 100%;
+  margin-top: 0.75rem;
 }
 
-.dnt__navbar-menu {
-    margin-left: 1rem;
-
+@media (max-width: 900px) {
+  .navbar__links,
+  .navbar__cta {
     display: none;
-    position: relative;
-}
-
-.dnt__navbar-menu svg {
-    cursor: pointer;
-}
-
-.dnt__navbar-menu_container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    text-align: end;
-    background: var(--color-footer);
-    padding: 2rem;
-    position: absolute;
-    right: 0;
-    top: 40px;
-    margin-top: 1rem;
-    min-width: 210px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
-}
-
-.dnt__navbar-menu_container p {
-    margin: 1rem 0;
-}
-
-.dnt__navbar-menu_container-links-sign {
-    display: none;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
   }
 
-
-@media screen and (max-width: 1050px) {
-    .dnt__navbar-links_container {
-        display: none;
-    }
-
-    .dnt__navbar-menu {
-        display: flex;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .dnt__navbar {
-        padding: 2rem 4rem;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .dnt__navbar {
-        padding: 2rem;
-    }
-
-    .dnt__navbar-sign {
-        display: none;
-    }
-
-    .dnt__navbar-menu_container {
-        top: 20px;
-    }
-
-    .dnt__navbar-menu_container-links-sign {
-        display: block;
-    } 
+  .navbar__toggle {
+    display: inline-flex;
+  }
 }

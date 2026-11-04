@@ -1,0 +1,22 @@
+.logo {
+  overflow: visible;
+}
+
+.logo__pulse {
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-dasharray: 16 200;
+  stroke-dashoffset: 24;
+  animation: logo-pulse 9s linear infinite;
+}
+
+@keyframes logo-pulse {
+  0% {
+    stroke-dashoffset: 24;
+  }
+
+  14%,
+  100% {
+    stroke-dashoffset: -108;
+  }
+}

@@ -1,52 +1,64 @@
-import React, { useState } from 'react';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import React, { useEffect, useState } from 'react';
+import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
+import { NAV_LINKS, SWAP_URL } from '../../content';
+import Logo from '../logo/Logo';
 import './navbar.css';
-import logotyp from '../../assets/logotyp.png';
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const handleClick = (e) => {
-    e.preventDefault();
-    window.location.href = 'https://app.uniswap.org/#/swap?inputCurrency=0x86632544e69c8019babd01be75393f9c2d46ee70&outputCurrency=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&chain=mainnet';
-  };
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
+
+  const close = () => setOpen(false);
 
   return (
-    <div className="dnt__navbar">
-      <div className="dnt__navbar-links">
-        <div className="dnt__navbar-links_logo">
-          <img src={logotyp} />
+    <header className="navbar">
+      <nav className="navbar__inner container" aria-label="Main">
+        <a className="navbar__brand" href="#home" onClick={close}>
+          <Logo idPrefix="nav" size={30} />
+          Dynamic Network
+        </a>
+
+        <ul className="navbar__links">
+          {NAV_LINKS.map(({ label, href }) => (
+            <li key={href}><a href={href}>{label}</a></li>
+          ))}
+        </ul>
+
+        <a className="button button--primary navbar__cta" href={SWAP_URL} target="_blank" rel="noopener noreferrer">Get $DNT</a>
+
+        <button
+          type="button"
+          className="navbar__toggle"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <RiCloseLine size={24} aria-hidden="true" /> : <RiMenuLine size={24} aria-hidden="true" />}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="navbar__menu" id="mobile-menu">
+          <ul className="container">
+            {NAV_LINKS.map(({ label, href }) => (
+              <li key={href}><a href={href} onClick={close}>{label}</a></li>
+            ))}
+            <li>
+              <a className="button button--primary" href={SWAP_URL} target="_blank" rel="noopener noreferrer" onClick={close}>Get $DNT</a>
+            </li>
+          </ul>
         </div>
-        <div className="dnt__navbar-links_container">
-          <p><a href="#home">Home</a></p>
-          <p><a href="#about">About</a></p>
-          <p><a href="#socials">Research</a></p>
-          <p><a href="#token">Token</a></p>
-          <p><a href="#docs">Docs</a></p>
-        </div>
-      </div>
-      <div className="dnt__navbar-sign">
-        <button type="button" onClick={handleClick}>Get $DNT</button>
-      </div>
-      <div className="dnt__navbar-menu">
-        {toggleMenu
-          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
-          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
-        {toggleMenu && (
-        <div className="dnt__navbar-menu_container scale-up-center">
-          <div className="dnt__navbar-menu_container-links">
-            <p><a href="#home">Home</a></p>
-            <p><a href="#about">About</a></p>
-            <p><a href="#token">Token</a></p>
-            <p><a href="#socials">Research</a></p>
-            <p><a href="#docs">Docs</a></p>
-          </div>
-          <div className="dnt__navbar-menu_container-links-sign">
-            <button type="button">Get $DNT</button>
-          </div>
-        </div>
-        )}
-      </div>
-    </div>
+      )}
+    </header>
   );
 };
 
